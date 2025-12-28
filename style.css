@@ -463,12 +463,20 @@ footer {
 
 .video-overlay {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.video-overlay h2 {
+    font-size: 0.7rem;
+    /* Tiny text */
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 /* Gallery Section */
