@@ -775,6 +775,10 @@ footer {
         gap: 1rem !important;
         margin-top: 2rem !important;
     }
+
+    header.scrolled .logo {
+        transform: translateX(-50%) scale(1.1);
+    }
 }
 
 @media (max-width: 480px) {
