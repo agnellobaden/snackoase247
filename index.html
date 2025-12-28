@@ -46,13 +46,21 @@
         <section class="section" id="video"
             style="padding-top: 50px; background-size: cover; background-position: center center;">
             <div class="video-container">
-                <video autoplay="" muted="" loop="" playsinline="" class="featured-video">
-                    <source src="2025-12-10-164927969.mp4" type="video/mp4" id="video-source-main">
+                <audio id="bg-music" loop preload="auto" style="display:none">
+                    <source src="mymusic.mp3.mp3" type="audio/mp3">
+                </audio>
+                <video autoplay="" muted="" loop="" playsinline="" class="featured-video" id="kiosk-video">
+                    <source src="neuJahr.mp4" type="video/mp4" id="video-source-main">
                     Your browser does not support the video tag.
                 </video>
-                <div class="video-overlay">
+                <div class="video-overlay"
+                    style="display: flex; flex-direction: column; align-items: start; gap: 10px;">
                     <h2 id="video-h2-18">Live aus der <span class="gradient-text" id="video-span-19">SnackOase</span>
                     </h2>
+                    <button id="unmute-btn"
+                        style="background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.5); color: white; padding: 8px 16px; border-radius: 20px; cursor: pointer; backdrop-filter: blur(5px); display: none; align-items: center; gap: 8px; font-weight: 600;">
+                        <i class="fas fa-volume-up"></i> Sound an
+                    </button>
                 </div>
             </div>
         </section>
