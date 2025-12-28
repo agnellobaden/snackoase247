@@ -68,10 +68,12 @@ h3 {
 }
 
 /* Header */
+/* Header */
 header {
     height: 70px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Center the Nav */
     align-items: center;
     padding: 0 5%;
     position: fixed;
@@ -102,9 +104,34 @@ header.scrolled {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Scrolled State Animations */
+header.scrolled .logo {
+    left: 50%;
+    transform: translateX(-50%) scale(1.8);
+}
+
+header.scrolled nav {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
+    position: absolute;
+    left: 5%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2001;
+}
+
+.social-links-block {
+    position: absolute;
+    right: 5%;
+}
+
+nav {
+    transition: all 0.3s ease;
 }
 
 nav ul {
