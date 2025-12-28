@@ -39,6 +39,7 @@ h3 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 .gradient-text {
@@ -526,8 +527,9 @@ footer {
     left: 0;
     width: 100%;
     padding: 30px 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
     color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .slide-overlay h4 {
