@@ -134,4 +134,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         interactionEvents.forEach(event => document.addEventListener(event, unlockAudio, { passive: true }));
     }
+
+    // 5. Bubble Effect for Aquaman Style
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        const size = Math.random() * 40 + 10 + 'px';
+        bubble.style.width = size;
+        bubble.style.height = size;
+        
+        bubble.style.left = Math.random() * 100 + 'vw';
+        bubble.style.animation = `rise ${Math.random() * 4 + 4}s linear forwards`;
+        
+        document.body.appendChild(bubble);
+        
+        setTimeout(() => {
+            bubble.remove();
+        }, 8000);
+    }
+
+    setInterval(createBubble, 500);
 });
