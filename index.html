@@ -18,10 +18,37 @@
 
 <body>
 
+    <!-- 3D Welcome Overlay / Offer of the Week -->
+    <div id="welcome-overlay" style="display: none; opacity: 0;">
+        <div class="intro-content">
+            <img src="affenLogo.png" alt="Logo" class="intro-logo-3d">
+            <h2 class="intro-title">DEAL DER WOCHE</h2>
+            <div class="intro-3d-wrapper">
+                <div class="cube-scene">
+                    <img src="Mystery.png" alt="Deal of the Week" class="intro-img">
+                </div>
+                <div class="intro-badge">-33%</div>
+            </div>
+            <p class="intro-text">Mystery Packs jetzt nur 10€!</p>
+            <button id="enter-site-btn" class="btn-primary">ZUM SHOP</button>
+            <p style="font-size: 0.7rem; color: #aaa; margin-top: 10px;">(Schließt automatisch in 10s)</p>
+        </div>
+    </div>
+
     <header id="header" style="text-align: right;">
         <div class="logo" style="display: flex; align-items: center; gap: 10px;">
             <img src="Logo.jpg" alt="Logo" style="height: 50px; width: auto;" id="header-img-0">
-            <span id="header-span-1">SNACK<span class="gradient-text" id="el-span-1">OASE</span> 24/7</span>
+            <div style="display: flex; flex-direction: column;">
+                <span id="header-span-1" style="line-height: 1;">SNACK<span class="gradient-text"
+                        id="el-span-1">OASE</span> 24/7</span>
+                <span
+                    style="font-size: 0.6rem; color: var(--accent); font-weight: 700; letter-spacing: 1px; display: flex; align-items: center; gap: 4px;">
+                    <span
+                        style="width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; box-shadow: 0 0 5px var(--accent);"
+                        class="pulse-dot"></span>
+                    SYSTEM ONLINE
+                </span>
+            </div>
         </div>
         <nav>
             <ul>
@@ -68,7 +95,7 @@
             style="background-image: linear-gradient(rgba(0,18,25,0.7), rgba(0,18,25,0.7)), url('aquaman_vending_machine_underwater_1767082039012.png'); background-size: cover; background-position: center center;">
             <div class="hero-content">
                 <div class="hero-monkey" id="home-div-1">
-                    <img src="aquaman_trident_icon_1767082055433.png" alt="Trident"
+                    <img src="affenLogo.png" alt="Trident"
                         style="width: 120px; filter: drop-shadow(0 0 30px var(--secondary));" id="home-img-17">
                 </div>
                 <h1 id="home-h1-13">DEIN 24/7 SPOT FÜR DEN <span class="gradient-text" id="home-span-14">ULTIMATIVEN
@@ -90,21 +117,27 @@
 
                 <!-- Trust Bar -->
                 <div
-                    style="display: flex; justify-content: center; gap: 2rem; margin-top: 4rem; opacity: 0.9; flex-wrap: wrap; text-shadow: 0 0 15px rgba(0,242,255,0.5);">
-                    <div
-                        style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 700; color: var(--secondary);">
-                        <i class="fas fa-water" style="color: var(--accent);"></i> <span id="home-trust-text-1">TIEFSEE
-                            FRISCH</span>
+                    style="display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; opacity: 0.9; flex-wrap: wrap;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--secondary);"
+                            class="stat-count">500+</span>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 700; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px;">Zufriedene
+                            Kunden</span>
                     </div>
-                    <div
-                        style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 700; color: var(--secondary);">
-                        <i class="fas fa-snowflake" style="color: var(--accent);"></i> <span
-                            id="home-trust-text-2">EISKALT GENIEßEN</span>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--accent);"
+                            class="stat-count">24/7</span>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 700; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px;">Immer
+                            am Start</span>
                     </div>
-                    <div
-                        style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 700; color: var(--secondary);">
-                        <i class="fas fa-crown" style="color: var(--accent);"></i> <span id="home-trust-text-3">FIRST
-                            CLASS BRANDS</span>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <span style="font-size: 2rem; font-weight: 800; color: var(--secondary);"
+                            class="stat-count">100+</span>
+                        <span
+                            style="font-size: 0.7rem; font-weight: 700; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px;">Top
+                            Brands</span>
                     </div>
                 </div>
             </div>
@@ -176,7 +209,7 @@
                 </div>
                 <div class="offer-card">
                     <span class="price-badge" style="background: #ffcc00; color: #000;" id="offers-badge-import">
-        </span>
+                    </span>
                     <img src="Snacksauswahl.png" alt="USA Snacks" id="offers-img-import">
                     <h3 id="offers-h3-import">Snacks</h3>
                     <div id="offers-price-import"
@@ -230,44 +263,49 @@
             <div class="offers-grid" style="max-width: 1200px; margin: 0 auto;">
                 <!-- Combo 1 -->
                 <div class="glass-card"
-                    style="display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid var(--accent);">
+                    style="display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid var(--accent); position: relative;">
                     <div
-                        style="font-size: 0.8rem; background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: 800;">
-                        SPAR-TIPP</div>
-                    <div style="display: flex; gap: -20px; margin-bottom: 20px;">
+                        style="position: absolute; top: -15px; background: var(--accent); color: #000; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.7rem; letter-spacing: 1px;">
+                        POPULÄR</div>
+                    <div style="display: flex; gap: -20px; margin-bottom: 25px; margin-top: 10px;">
                         <img src="Mystery.png"
-                            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid var(--primary); transform: translateX(15px);">
+                            style="width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 4px solid var(--primary); transform: translateX(15px); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
                         <img src="Oase.png"
-                            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid var(--secondary); transform: translateX(-15px);">
+                            style="width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 4px solid var(--secondary); transform: translateX(-15px); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
                     </div>
-                    <h3 id="combos-h3-1">Hype Bundle</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.9rem;">2x Mystery Pack in manchen Spirale</p>
-                    <div style="font-size: 2rem; font-weight: 800; color: var(--secondary); margin-bottom: 15px;">10,00€
+                    <h3 id="combos-h3-1" style="font-size: 1.5rem; margin-bottom: 10px;">Hype Bundle</h3>
+                    <p style="margin-bottom: 20px; font-size: 1rem; color: var(--text-gray);">2x Mystery Pack <br>Hol
+                        dir
+                        die doppelte Überraschung!<br>Finde die Spirale</p>
+                    <div
+                        style="font-size: 2.2rem; font-weight: 900; color: var(--accent); margin-bottom: 20px; text-shadow: 0 0 15px rgba(255,204,0,0.3);">
+                        10,00€
                         <span
-                            style="font-size: 1rem; text-decoration: line-through; color: var(--text-gray);">15,00€</span>
+                            style="font-size: 1.2rem; text-decoration: line-through; color: var(--text-gray); opacity: 0.5;">15,00€</span>
                     </div>
-                    <a href="#location" class="btn-primary" style="width: 100%; justify-content: center;">Jetzt
-                        sparen</a>
+                    <a href="#location" class="btn-primary"
+                        style="width: 100%; justify-content: center; padding: 15px;">JETZT SNAPPEN</a>
                 </div>
                 <!-- Combo 2 -->
                 <div class="glass-card"
-                    style="display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid var(--secondary);">
+                    style="display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid var(--secondary); position: relative;">
                     <div
-                        style="font-size: 0.8rem; background: var(--secondary); color: #000; padding: 5px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: 800;">
-                        US-VIBES</div>
-                    <div style="display: flex; gap: -20px; margin-bottom: 20px;">
+                        style="position: absolute; top: -15px; background: var(--secondary); color: #000; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.7rem; letter-spacing: 1px;">
+                        ❤</div>
+                    <div style="display: flex; gap: -20px; margin-bottom: 25px; margin-top: 10px;">
                         <img src="Snacks.png"
-                            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ffcc00; transform: translateX(15px);">
+                            style="width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 4px solid #ffcc00; transform: translateX(15px); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
                         <img src="redbulls.png"
-                            style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); transform: translateX(-15px);">
+                            style="width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 4px solid var(--accent); transform: translateX(-15px); box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
                     </div>
-                    <h3 id="combos-h3-2">Movie Night</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.9rem;">Große Tüte Chips + Premium Drink</p>
-                    <div style="font-size: 2rem; font-weight: 800; color: var(--secondary); margin-bottom: 15px;">❤
-
-                        <a href="#location" class="btn-primary" style="width: 100%; justify-content: center;">Snack
-                            holen</a>
-                    </div>
+                    <h3 id="combos-h3-2" style="font-size: 1.5rem; margin-bottom: 10px;">Movie Night</h3>
+                    <p style="margin-bottom: 20px; font-size: 1rem; color: var(--text-gray);">Große Tüte Chips & Premium
+                        Drink <br> Der perfekte Vibe.</p>
+                    <div
+                        style="font-size: 2.2rem; font-weight: 900; color: var(--secondary); margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,242,255,0.3);">
+                        IMMER BEI UNS ERHÄLTLICH</div>
+                    <a href="#location" class="btn-primary"
+                        style="width: 100%; justify-content: center; padding: 15px;">GÖNN ICH MIR</a>
                 </div>
         </section>
 
@@ -418,8 +456,8 @@
 
 
 
-                                <p id="contact-p-132"><a id="cms-footer-email" href="mailto:snack247oase@gmail.com"
-                                        style="word-break: break-all;">snack247oase@gmail.com</a></p>
+                                <p id="contact-p-132"><a id="cms-footer-email" href="mailto:snackoase2@gmail.com"
+                                        style="word-break: break-all;">snackoase2@gmail.com</a></p>
 
 
 
@@ -468,11 +506,10 @@
         </div>
         <p style="margin-top: 10px; font-size: 0.8rem; color: var(--text-gray);" id="el-p-88">Designed with ❤️ for
             SnackOase</p>
-        <div style="margin-top: 15px; font-size: 0.65rem; color: var(--text-gray); opacity: 0.5;">
-            Besucher: <img
-                src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fagnellobaden.github.io%2Fsnackoase247&count_bg=%230077be&title_bg=%23050505&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=true"
-                alt="Visitor Counter" style="vertical-align: middle; height: 14px;" />
-        </div>
+        <!-- Invisible Visitor Counter (Counts actual site visits) -->
+        <img id="visitor-counter-img"
+            src="https://api.visitorbadge.io/api/visitors?path=agnellobaden.github.io/snackoase247&label=BESUCHER&countColor=%2300f2ff&style=flat"
+            alt="Visitor Counter" style="display: none;" loading="eager" />
     </footer>
 
     <script src="script.js"></script>

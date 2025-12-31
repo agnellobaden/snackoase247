@@ -1486,6 +1486,17 @@
         <div class="nav-item-clean" onclick="switchTab('social')"><i class="fas fa-share-alt"></i> Social Media</div>
       </div>
       <div class="sidebar-footer bottom-nav">
+        <div
+          style="margin-bottom: 15px; text-align: center; opacity: 0.9; display: flex; flex-direction: column; align-items: center; gap: 5px;">
+          <img id="sidebar-visitor-img"
+            src="https://api.visitorbadge.io/api/visitors?path=agnellobaden.github.io/snackoase247&label=BESUCHER&countColor=%2300f2ff&style=flat"
+            alt="Visitor Counter" />
+          <button onclick="resetVisitorCounter()" class="btn-ghost"
+            style="font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; color: var(--text-muted); width: auto;"
+            title="Zähler zurücksetzen">
+            <i class="fas fa-redo-alt"></i> Reset
+          </button>
+        </div>
         <button id="logoutBtn" class="btn nav-item-clean" style="width: 100%;">
           <i class="fas fa-sign-out-alt"></i> Abmelden
         </button>
@@ -6663,6 +6674,38 @@
       };
       reader.readAsText(file);
       input.value = ''; // Reset
+    }
+
+    function resetVisitorCounter() {
+      if (!confirm("Möchtest du den Besucherzähler wirklich auf NULL zurücksetzen? Dies ändert den Tracking-Pfad.")) return;
+
+      const newTimestamp = new Date().getTime();
+      const basePath = "agnellobaden.github.io/snackoase247";
+      // We append a timestamp to the path to reset the counter on the server side (logic: new path = new counter)
+      const newPath = `${basePath}_${newTimestamp}`;
+      const newUrl = `https://api.visitorbadge.io/api/visitors?path=${newPath}&label=BESUCHER&countColor=%2300f2ff&style=flat`;
+
+      // 1. Update Sidebar Image
+      const sidebarImg = document.getElementById('sidebar-visitor-img');
+      if (sidebarImg) {
+        sidebarImg.src = newUrl;
+      }
+
+      // 2. Update Index.html Content (if loaded)
+      if (loadedHtmlContent) {
+        // Regex to find the visitor badge image src. 
+        // We look for the standard part of the URL.
+        const regex = /https:\/\/api\.visitorbadge\.io\/api\/visitors\?path=[^"']+/g;
+        if (regex.test(loadedHtmlContent)) {
+          loadedHtmlContent = loadedHtmlContent.replace(regex, newUrl);
+          updatePreview();
+          showNotification("Zähler zurückgesetzt! Bitte index.html speichern.", "success");
+        } else {
+          showNotification("Zähler-Code in index.html nicht gefunden. Füge ihn neu hinzu oder lade index.html neu.", "warning");
+        }
+      } else {
+        showNotification("Bitte zuerst index.html laden, um den Zähler dort zu aktualisieren.", "info");
+      }
     }
 
     // Init Theme
