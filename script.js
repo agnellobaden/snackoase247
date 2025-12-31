@@ -4,25 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterBtn = document.getElementById('enter-site-btn');
 
     // Check if user has already seen the intro in this session
-    // Remove sessionStorage check if you want it EVERY time for debugging, but typically session is good.
-    // For "WOW" factor every refresh, we can comment out the check.
     if (welcomeOverlay) {
-        welcomeOverlay.style.display = 'flex';
-        // Force reflow to enable transition
-        void welcomeOverlay.offsetWidth;
-        welcomeOverlay.style.opacity = '1';
+        // Overlay is visible by CSS default (index.html) so no need to force display/opacity here.
 
         const closeOverlay = () => {
             welcomeOverlay.style.opacity = '0';
             setTimeout(() => {
                 welcomeOverlay.style.display = 'none';
-                // Trigger auto-play music logic here if needed as user has interacted
-                if (typeof playAudioSource === 'function') {
-                    // This serves as the 'user interaction' to unlock audio
-                    // playAudioSource().catch(e => console.log("Audio waiting")); 
-                    // We actually leverage the existing click listener on document for audio
-                }
-            }, 500);
+            }, 2000); // 2s matches CSS transition
         };
 
         // Auto-close after 10 seconds
